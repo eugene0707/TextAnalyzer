@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextAnalyzerConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "/f:../../../example.txt"
+    }
+  }
+}

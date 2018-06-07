@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Анализ текста</h2>
+<form action="/Home/Index" method="post">
+    <div class="form-group">
+        <label for="sourceText">Исходный текст</label>
+        <textarea class="form-control" rows="5" id="sourceText" name="sourceText">@ViewData["sourceText"]</textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Анализировать</button>
+</form>
+
+@if (ViewData["metricResults"] != null)
+{
+<div class="row">
+    <h3>Результаты</h3>
+    <ul>
+        @foreach (var metric in ViewData["metricResults"] as IList<TextAnalyzerShared.Core.TextMetricResult>)
+        {
+            <li>
+                @metric
+            </li>
+        }
+    </ul>
+</div>
+}
